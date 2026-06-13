@@ -2,33 +2,228 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Rowe AI – Smart Chatbots for Small Business</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rowe AI – Smart Chatbots for Small Business</title>
+  <meta name="description" content="Rowe AI chatbots answer your customers' questions 24/7 so you can focus on your business. Sign up and get your first month free." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: system-ui, sans-serif; margin: 0; background:#050816; color:#f5f5f5; }
-    .hero { min-height: 100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 0 1.5rem; }
-    h1 { font-size: 2.6rem; margin-bottom: 0.5rem; }
-    h2 { font-size: 1.2rem; font-weight: 400; color:#b3b3b3; margin-bottom: 2rem; }
-    .badge { text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; color:#9ae6b4; margin-bottom: 1rem; }
-    .btn { display:inline-block; margin: .4rem; padding:.8rem 1.4rem; border-radius:999px; border:1px solid #3b82f6; color:#f9fafb; text-decoration:none; font-size:.9rem; }
-    .btn.primary { background:#3b82f6; }
-    .pill { margin-top:1.5rem; font-size:.8rem; color:#9ca3af; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #000000;
+      font-family: "Playfair Display", "Roboto", Georgia, serif;
+      line-height: 1.7;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .site-header {
+      background: #008080;
+      padding: 2.5rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    .site-header img {
+      max-width: min(520px, 90vw);
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin: 0 0 1.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-slogan {
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    .text-box {
+      border: 2px solid #008080;
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+      margin: 2.5rem auto;
+      background: #fafafa;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+
+    .text-box p {
+      margin: 0 0 1.25rem;
+    }
+
+    .text-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-image {
+      margin: 2.5rem auto;
+      max-width: 760px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .cta-box {
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    .register-wrap {
+      text-align: center;
+      margin: 2.5rem 0 3.5rem;
+    }
+
+    .register-btn {
+      display: inline-block;
+      background: #008080;
+      color: #ffffff;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 1rem 3rem;
+      border-radius: 999px;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .register-btn:hover,
+    .register-btn:focus {
+      background: #006666;
+      transform: translateY(-2px);
+    }
+
+    .contact {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .contact h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.75rem;
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    .contact p {
+      margin: 0.35rem 0;
+      font-size: 1.05rem;
+    }
+
+    .contact a {
+      color: #008080;
+      text-decoration: none;
+    }
+
+    .contact a:hover,
+    .contact a:focus {
+      text-decoration: underline;
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #f5f5f5;
+      border-top: 1px solid #e0e0e0;
+      font-family: "Roboto", sans-serif;
+      font-size: 0.95rem;
+      color: #333333;
+    }
   </style>
 </head>
 <body>
-  <main class="hero">
-    <div class="badge">Rowe AI · Guelph, ON</div>
-    <h1>AI chatbots that actually help your customers.</h1>
-    <h2>Rowe AI builds custom chatbots and automation for small businesses—so you look bigger without working harder.</h2>
+  <header class="site-header">
+    <img src="photos for website/rowe-ai-logo.png" alt="Rowe AI logo" />
+  </header>
 
-    <div>
-      <a href="mailto:info@roweai.ca" class="btn primary">Book a free consult</a>
-      <a href="mailto:support@roweai.ca" class="btn">Already a client? Get support</a>
+  <main>
+    <section class="hero">
+      <h1>Welcome to Rowe AI</h1>
+      <img
+        class="hero-slogan"
+        src="photos for website/Slogan.png"
+        alt="Rowe AI slogan"
+      />
+    </section>
+
+    <div class="text-box">
+      <p>Tired of all those phone calls you receive all day from customers with the same questions, like &ldquo;What time are you open till?&rdquo;, &ldquo;Where are you located?&rdquo;, &ldquo;How much is this?&rdquo;, or &ldquo;What is the price of this or that?&rdquo;? Let&rsquo;s face it, these questions are important to answer. But we all know how disruptive those calls can be when you're in the middle of a haircut, making a lunch order, tattooing a customer, or performing any task your business provides.</p>
+      <p>There&rsquo;s a way to answer your customers&rsquo; questions without stopping what you're doing. In fact, you could do it even as you sleep! How, you ask? With Rowe AI&rsquo;s Chatbot! Think of it as your own personal secretary, except it never sleeps, never needs a break, and never calls in sick.</p>
+      <p>Sign up now and get your first month completely free! After that, it&rsquo;s just $25 a month. For the cost of a takeout dinner, you could get the freedom you deserve.</p>
     </div>
 
-    <div class="pill">
-      Launching now · Custom setups · No tech skills needed
+    <img
+      class="section-image"
+      src="photos for website/chat-widget.jpeg"
+      alt="Rowe AI chat widget preview"
+    />
+
+    <div class="text-box">
+      <p>Your chatbot comes with a chat history and analytics in your own dashboard so you can review the conversations your customers are having. You might even find services people are looking for that you don't currently have. You could then add those services and bring in even more customers!</p>
     </div>
+
+    <img
+      class="section-image"
+      src="photos for website/client-dashboard.jpeg"
+      alt="Rowe AI client dashboard preview"
+    />
+
+    <div class="text-box">
+      <p>With your client dashboard, you take control of the way your chatbot reacts and answers questions. Give the chatbot the personality that suits your business and test it out at the bottom of the dashboard before putting it on your website. A PDF installation guide is also available on the dashboard. You can also change your password whenever you want.</p>
+    </div>
+
+    <img
+      class="section-image"
+      src="photos for website/loki-image.png"
+      alt="Loki chatbot character"
+    />
+
+    <div class="text-box cta-box">
+      <p>Sign up now to boost your customer base, and free up time and your phone line while you work!</p>
+    </div>
+
+    <div class="register-wrap">
+      <a class="register-btn" href="https://ai-platform-frontend-uaaa.onrender.com/register.html">Register Now!</a>
+    </div>
+
+    <section class="contact">
+      <h2>Contact Rowe AI</h2>
+      <p>(1)226-343-9977</p>
+      <p><a href="mailto:rowe-ai@outlook.com">rowe-ai@outlook.com</a></p>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    &copy;2026 Rowe AI - All Rights Reserved.
+  </footer>
 </body>
 </html>
