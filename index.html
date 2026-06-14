@@ -225,9 +225,37 @@
   <footer class="site-footer">
     &copy;2026 Rowe AI - All Rights Reserved.
   </footer>
-<script
-  src="https://ai-platform-frontend-uaaa.onrender.com/widget.js"
-  data-business="rowe_ai_website"
-></script>
+<script>
+  (function () {
+    var businessId = "rowe_ai_website";
+    var baseUrl = "https://ai-platform-frontend-uaaa.onrender.com";
+
+    var bubble = document.createElement("div");
+    bubble.id = "chat-bubble";
+    bubble.setAttribute("aria-label", "Open chat");
+    bubble.style.cssText =
+      "position:fixed;bottom:20px;right:20px;width:60px;height:60px;" +
+      "z-index:999999;cursor:pointer;border-radius:50%;overflow:hidden;" +
+      "box-shadow:0 4px 12px rgba(0,0,0,0.25);";
+    bubble.innerHTML =
+      '<img src="https://i.imgur.com/8QfQ7kT.png" alt="Chat with Loki" ' +
+      'style="width:100%;height:100%;object-fit:cover;display:block;">';
+    document.body.appendChild(bubble);
+
+    var iframe = document.createElement("iframe");
+    iframe.src =
+      baseUrl + "/widget-frame.html?business=" + encodeURIComponent(businessId);
+    iframe.title = "Rowe AI chat";
+    iframe.style.cssText =
+      "position:fixed;bottom:100px;right:20px;width:350px;height:520px;" +
+      "border:none;border-radius:14px;box-shadow:0 0 12px rgba(0,0,0,0.25);" +
+      "z-index:999999;display:none;max-width:calc(100vw - 40px);";
+    document.body.appendChild(iframe);
+
+    bubble.addEventListener("click", function () {
+      iframe.style.display = iframe.style.display === "none" ? "block" : "none";
+    });
+  })();
+</script>
 </body>
 </html>
