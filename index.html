@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rowe AI – Smart Chatbots for Small Business</title>
   <meta name="description" content="Rowe AI chatbots answer your customers' questions 24/7 so you can focus on your business. Sign up and get your first month free." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,18 +21,33 @@
       color: #000000;
       font-family: "Playfair Display", "Roboto", Georgia, serif;
       line-height: 1.7;
+      text-align: center;
+    }
+
+    /* Center and constrain content */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
     img {
       max-width: 100%;
       height: auto;
       display: block;
+      margin: 0 auto;
     }
 
     .site-header {
       background: #008080;
       padding: 2.5rem 1.5rem 3rem;
       text-align: center;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
     }
 
     .site-header img {
@@ -41,9 +56,7 @@
     }
 
     main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 4rem;
+      padding: 2rem 0 3rem;
     }
 
     .hero {
@@ -59,6 +72,7 @@
     }
 
     .hero-slogan {
+      width: 100%;
       max-width: 720px;
       margin: 0 auto;
       border-radius: 8px;
@@ -74,6 +88,9 @@
       font-size: 1.05rem;
       font-weight: 400;
       line-height: 1.8;
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
     }
 
     .text-box p {
@@ -85,8 +102,9 @@
     }
 
     .section-image {
-      margin: 2.5rem auto;
+      width: 100%;
       max-width: 760px;
+      margin: 2.5rem auto;
       border-radius: 8px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
@@ -113,6 +131,7 @@
       padding: 1rem 3rem;
       border-radius: 999px;
       transition: background 0.2s ease, transform 0.15s ease;
+      max-width: 100%;
     }
 
     .register-btn:hover,
@@ -158,69 +177,115 @@
       font-size: 0.95rem;
       color: #333333;
     }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      body {
+        padding: 10px;
+      }
+
+      main {
+        padding: 1.5rem 0 2rem;
+      }
+
+      .site-header {
+        padding: 2rem 1rem 2.5rem;
+      }
+
+      .text-box {
+        padding: 1.25rem 1rem;
+        margin: 1.75rem auto;
+        font-size: 1rem;
+      }
+
+      .hero {
+        margin-bottom: 2rem;
+      }
+
+      .section-image {
+        margin: 1.75rem auto;
+      }
+
+      .register-btn {
+        font-size: 1.1rem;
+        padding: 0.9rem 2rem;
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .contact h2 {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <img src="photos for website/rowe-ai-logo.png" alt="Rowe AI logo" />
-  </header>
+  <div class="container">
+    <header class="site-header">
+      <img src="photos for website/rowe-ai-logo.png" alt="Rowe AI logo" />
+    </header>
 
-  <main>
-    <section class="hero">
-      <h1>Welcome to Rowe AI</h1>
+    <main>
+      <section class="hero">
+        <h1>Welcome to Rowe AI</h1>
+        <img
+          class="hero-slogan"
+          src="photos for website/Slogan.png"
+          alt="Rowe AI slogan"
+        />
+      </section>
+
+      <div class="text-box">
+        <p>Tired of all those phone calls you receive all day from customers with the same questions, like &ldquo;What time are you open till?&rdquo;, &ldquo;Where are you located?&rdquo;, &ldquo;How much is this?&rdquo;, or &ldquo;What is the price of this or that?&rdquo;? Let&rsquo;s face it, these questions are important to answer. But we all know how disruptive those calls can be when you're in the middle of a haircut, making a lunch order, tattooing a customer, or performing any task your business provides.</p>
+        <p>There&rsquo;s a way to answer your customers&rsquo; questions without stopping what you're doing. In fact, you could do it even as you sleep! How, you ask? With Rowe AI&rsquo;s Chatbot! Think of it as your own personal secretary, except it never sleeps, never needs a break, and never calls in sick.</p>
+        <p>Sign up now and get your first month completely free! After that, it&rsquo;s just $25 a month. For the cost of a takeout dinner, you could get the freedom you deserve.</p>
+      </div>
+
       <img
-        class="hero-slogan"
-        src="photos for website/Slogan.png"
-        alt="Rowe AI slogan"
+        class="section-image"
+        src="photos for website/chat-widget.jpeg"
+        alt="Rowe AI chat widget preview"
       />
-    </section>
 
-    <div class="text-box">
-      <p>Tired of all those phone calls you receive all day from customers with the same questions, like &ldquo;What time are you open till?&rdquo;, &ldquo;Where are you located?&rdquo;, &ldquo;How much is this?&rdquo;, or &ldquo;What is the price of this or that?&rdquo;? Let&rsquo;s face it, these questions are important to answer. But we all know how disruptive those calls can be when you're in the middle of a haircut, making a lunch order, tattooing a customer, or performing any task your business provides.</p>
-      <p>There&rsquo;s a way to answer your customers&rsquo; questions without stopping what you're doing. In fact, you could do it even as you sleep! How, you ask? With Rowe AI&rsquo;s Chatbot! Think of it as your own personal secretary, except it never sleeps, never needs a break, and never calls in sick.</p>
-      <p>Sign up now and get your first month completely free! After that, it&rsquo;s just $25 a month. For the cost of a takeout dinner, you could get the freedom you deserve.</p>
-    </div>
+      <div class="text-box">
+        <p>Your chatbot comes with a chat history and analytics in your own dashboard so you can review the conversations your customers are having. You might even find services people are looking for that you don't currently have. You could then add those services and bring in even more customers!</p>
+      </div>
 
-    <img
-      class="section-image"
-      src="photos for website/chat-widget.jpeg"
-      alt="Rowe AI chat widget preview"
-    />
+      <img
+        class="section-image"
+        src="photos for website/client-dashboard.jpeg"
+        alt="Rowe AI client dashboard preview"
+      />
 
-    <div class="text-box">
-      <p>Your chatbot comes with a chat history and analytics in your own dashboard so you can review the conversations your customers are having. You might even find services people are looking for that you don't currently have. You could then add those services and bring in even more customers!</p>
-    </div>
+      <div class="text-box">
+        <p>With your client dashboard, you take control of the way your chatbot reacts and answers questions. Give the chatbot the personality that suits your business and test it out at the bottom of the dashboard before putting it on your website. A PDF installation guide is also available on the dashboard. You can also change your password whenever you want.</p>
+      </div>
 
-    <img
-      class="section-image"
-      src="photos for website/client-dashboard.jpeg"
-      alt="Rowe AI client dashboard preview"
-    />
+      <img
+        class="section-image"
+        src="photos for website/loki-image.png"
+        alt="Loki chatbot character"
+      />
 
-    <div class="text-box">
-      <p>With your client dashboard, you take control of the way your chatbot reacts and answers questions. Give the chatbot the personality that suits your business and test it out at the bottom of the dashboard before putting it on your website. A PDF installation guide is also available on the dashboard. You can also change your password whenever you want.</p>
-    </div>
+      <div class="text-box cta-box">
+        <p>Sign up now to boost your customer base, and free up time and your phone line while you work!</p>
+      </div>
 
-    <img
-      class="section-image"
-      src="photos for website/loki-image.png"
-      alt="Loki chatbot character"
-    />
+      <div class="register-wrap">
+        <a class="register-btn" href="https://ai-platform-frontend-uaaa.onrender.com/register.html">Register Now!</a>
+      </div>
 
-    <div class="text-box cta-box">
-      <p>Sign up now to boost your customer base, and free up time and your phone line while you work!</p>
-    </div>
-
-    <div class="register-wrap">
-      <a class="register-btn" href="https://ai-platform-frontend-uaaa.onrender.com/register.html">Register Now!</a>
-    </div>
-
-    <section class="contact">
-      <h2>Contact Rowe AI</h2>
-      <p>(1)226-343-9977</p>
-      <p><a href="mailto:support@roweai.ca">support@roweai.ca</a></p>
-    </section>
-  </main>
+      <section class="contact">
+        <h2>Contact Rowe AI</h2>
+        <p>(1)226-343-9977</p>
+        <p><a href="mailto:support@roweai.ca">support@roweai.ca</a></p>
+      </section>
+    </main>
+  </div>
 
   <footer class="site-footer">
     &copy;2026 Rowe AI - All Rights Reserved.
