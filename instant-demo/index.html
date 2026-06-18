@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instant Chatbot Demo | Rowe AI</title>
+  <meta name="description" content="Try a personalized Rowe AI chatbot demo built from your business website in seconds." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="instant-demo.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="/">
+      <img src="../photos for website/rowe-ai-logo.png" alt="Rowe AI" />
+    </a>
+  </header>
+
+  <main class="demo-page">
+    <a class="home-link" href="/">&larr; Back to Rowe AI home</a>
+
+    <header class="demo-header">
+      <h1>Instant Chatbot Demo</h1>
+      <p class="demo-subtext">
+        See how Rowe AI would work on your business website. Enter your URL below to generate
+        a personalized chatbot demo using information from your site.
+      </p>
+    </header>
+
+    <section class="demo-card" id="demo-form-section">
+      <label for="website-url">Enter your business website</label>
+      <div class="demo-input-row">
+        <input
+          id="website-url"
+          type="text"
+          inputmode="url"
+          placeholder="Enter your business website (example.com or full URL)"
+          autocomplete="url"
+        />
+        <button id="generate-demo-btn" type="button">Generate Demo</button>
+      </div>
+      <div class="demo-status" id="demo-status" aria-live="polite"></div>
+    </section>
+
+    <section class="demo-card demo-chat-section hidden" id="demo-chat-section">
+      <div class="demo-business-summary" id="demo-business-summary"></div>
+      <div class="demo-chat" id="demo-chat-messages" aria-live="polite"></div>
+      <form class="demo-chat-input-row" id="demo-chat-form">
+        <input
+          id="demo-chat-input"
+          type="text"
+          placeholder="Ask the demo chatbot a question..."
+          maxlength="2000"
+          autocomplete="off"
+        />
+        <button id="demo-chat-send" type="submit">Send</button>
+      </form>
+    </section>
+
+    <section class="demo-cta hidden" id="demo-cta">
+      <p>Want a chatbot like this for your business?</p>
+      <a class="demo-register-btn" id="register-link" href="https://ai-platform-frontend-uaaa.onrender.com/billing.html">
+        Register Now &mdash; 30-Day Free Trial
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    &copy;2026 Rowe AI - All Rights Reserved.
+  </footer>
+
+  <script src="instant-demo.js"></script>
+</body>
+</html>

@@ -117,7 +117,33 @@
 
     .register-wrap {
       text-align: center;
-      margin: 2.5rem 0 1rem;
+      margin: 2.5rem 0 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .demo-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #008080;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 1rem 3rem;
+      border-radius: 999px;
+      border: 2px solid #008080;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+      max-width: 100%;
+    }
+
+    .demo-btn:hover,
+    .demo-btn:focus {
+      background: #008080;
+      color: #ffffff;
+      transform: translateY(-2px);
     }
 
     .cta-note {
@@ -219,7 +245,8 @@
         margin: 1.75rem auto;
       }
 
-      .register-btn {
+      .register-btn,
+      .demo-btn {
         font-size: 1.1rem;
         padding: 0.9rem 2rem;
         width: 100%;
@@ -285,6 +312,7 @@
       </div>
 
       <div class="register-wrap">
+        <a class="demo-btn" href="/instant-demo/">Try Demo</a>
         <a class="register-btn" href="https://ai-platform-frontend-uaaa.onrender.com/billing.html">Start Free 30-Day Trial</a>
       </div>
       <p class="cta-note">Secure checkout powered by Stripe. Card details are never stored by Rowe AI.</p>
