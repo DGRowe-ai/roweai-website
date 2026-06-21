@@ -213,6 +213,37 @@
       color: #333333;
     }
 
+    .site-footer p {
+      margin: 0.35rem 0;
+    }
+
+    .site-footer a {
+      color: #008080;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover,
+    .site-footer a:focus {
+      text-decoration: underline;
+    }
+
+    .login-note {
+      font-family: "Roboto", sans-serif;
+      font-size: 0.95rem;
+      margin: 0 auto 1rem;
+      max-width: 520px;
+    }
+
+    .login-note a {
+      color: #008080;
+      text-decoration: none;
+    }
+
+    .login-note a:hover,
+    .login-note a:focus {
+      text-decoration: underline;
+    }
+
     /* Mobile adjustments */
     @media (max-width: 600px) {
       .container {
@@ -315,7 +346,16 @@
         <a class="demo-btn" href="/instant-demo/">Try Demo</a>
         <a class="register-btn" href="https://ai-platform-frontend-uaaa.onrender.com/billing.html">Start Free 30-Day Trial</a>
       </div>
-      <p class="cta-note">Secure checkout powered by Stripe. Card details are never stored by Rowe AI.</p>
+      <p class="login-note">
+        Already have an account?
+        <a href="https://ai-platform-frontend-uaaa.onrender.com/login.html">Log in</a>
+        or visit your
+        <a href="https://ai-platform-frontend-uaaa.onrender.com/client-dashboard.html">client dashboard</a>.
+      </p>
+      <p class="cta-note">
+        Secure checkout powered by Stripe. Card details are never stored by Rowe AI.
+        After checkout, you&rsquo;ll set up your account with your email, password, business name, and business phone number.
+      </p>
 
       <section class="contact">
         <h2>Contact Rowe AI</h2>
@@ -326,7 +366,15 @@
   </div>
 
   <footer class="site-footer">
-    &copy;2026 Rowe AI - All Rights Reserved.
+    <p>
+      <a href="https://ai-platform-frontend-uaaa.onrender.com/login.html">Client Login</a>
+      &nbsp;|&nbsp;
+      <a href="https://ai-platform-frontend-uaaa.onrender.com/client-dashboard.html">Client Dashboard</a>
+    </p>
+    <p>
+      Support: <a href="mailto:support@roweai.ca">support@roweai.ca</a>
+    </p>
+    <p>&copy;2026 Rowe AI - All Rights Reserved.</p>
   </footer>
 <script
   src="https://ai-platform-frontend-uaaa.onrender.com/widget.js"

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting… | Rowe AI</title>
+  <script>
+    (function () {
+      var billingUrl = "https://ai-platform-frontend-uaaa.onrender.com/billing.html";
+      var params = new URLSearchParams(window.location.search);
+      var ref = params.get("ref");
+      var target = billingUrl;
+
+      if (ref) {
+        target += "?ref=" + encodeURIComponent(ref);
+      }
+
+      window.location.replace(target);
+    })();
+  </script>
+  <meta http-equiv="refresh" content="2;url=https://ai-platform-frontend-uaaa.onrender.com/billing.html" />
+</head>
+<body>
+  <p style="font-family: sans-serif; text-align: center; padding: 2rem;">
+    Redirecting to sign up&hellip;
+    <a href="https://ai-platform-frontend-uaaa.onrender.com/billing.html">Click here</a>
+    if you are not redirected.
+  </p>
+</body>
+</html>

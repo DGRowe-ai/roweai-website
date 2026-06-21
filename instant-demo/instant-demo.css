@@ -228,6 +228,37 @@ img {
   margin: 0 0 1rem;
 }
 
+.demo-login-note {
+  color: var(--muted);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.95rem;
+  margin: 1rem 0 0;
+}
+
+.demo-login-note a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.demo-login-note a:hover,
+.demo-login-note a:focus {
+  text-decoration: underline;
+}
+
+.site-footer p {
+  margin: 0.35rem 0;
+}
+
+.site-footer a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  text-decoration: underline;
+}
+
 .home-link {
   display: inline-block;
   color: var(--teal);
