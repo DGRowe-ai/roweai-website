@@ -1,64 +1,55 @@
 # roweai.ca — GitHub Pages
 
-Marketing site for **https://roweai.ca**
+## One-time setup (you must click these in GitHub)
 
-## Host on GitHub Pages (correct setup)
+### Step A — Enable Pages (2 clicks)
 
-### 1. Repo visibility (required)
+1. Open: **https://github.com/DGRowe-ai/roweai-website/settings/pages**
+2. Under **Build and deployment** → **Source**, choose **GitHub Actions** (not "Deploy from branch")
+3. Save
 
-GitHub Pages on a **private** repo needs **GitHub Pro** ($4/mo).
+The workflow `.github/workflows/pages.yml` deploys automatically on every push to `main`.
 
-On the **free** plan, make this repo **Public**:
+### Step B — Repo must be Public (free plan)
 
-`Settings → General → Danger Zone → Change repository visibility → Public`
+If the repo is **private** and you are on GitHub Free, Pages will not work.
 
-### 2. Turn on Pages
+**Settings → General → Danger Zone → Change visibility → Public**
 
-`Settings → Pages`
+(Or upgrade to GitHub Pro to keep it private.)
 
-| Setting | Value |
-|---------|--------|
-| Source | Deploy from a branch |
-| Branch | `main` |
-| Folder | `/ (root)` |
-| Custom domain | `roweai.ca` |
+### Step C — Custom domain
 
-Wait for the green DNS check, then enable **Enforce HTTPS**.
+On the same Pages settings page:
 
-The `CNAME` file in this repo already contains `roweai.ca`.
+- **Custom domain:** `roweai.ca`
+- Wait for green check → **Enforce HTTPS**
 
-### 3. GoDaddy DNS (replace Render records)
+The `CNAME` file in this repo already says `roweai.ca`.
 
-**Delete** any A records pointing to `216.24.57.x` (Render).
+### Step D — GoDaddy DNS (switch back from Render)
 
-**Delete** the CNAME for `www` → `ai-platform-frontend-uaaa.onrender.com`.
+**Delete** Render records (`216.24.57.x` A records, www → Render CNAME).
 
-**Add** these records:
+**Add:**
 
-| Type | Name | Value | TTL |
-|------|------|--------|-----|
-| A | `@` | `185.199.108.153` | 1 Hour |
-| A | `@` | `185.199.109.153` | 1 Hour |
-| A | `@` | `185.199.110.153` | 1 Hour |
-| A | `@` | `185.199.111.153` | 1 Hour |
-| CNAME | `www` | `dgrowe-ai.github.io` | 1 Hour |
+| Type | Name | Value |
+|------|------|--------|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `dgrowe-ai.github.io` |
 
-### 4. Remove roweai.ca from Render
+### Step E — Remove roweai.ca from Render
 
-In Render → **ai-platform-frontend-uaaa** → Settings → Custom Domains:
+Render → **ai-platform-frontend-uaaa** → Custom Domains → **remove** roweai.ca
 
-**Remove** `roweai.ca` and `www.roweai.ca`.
+---
 
-The app stays at: `https://ai-platform-frontend-uaaa.onrender.com`
+## After setup
 
-### 5. Wait and test
+- Site: **https://roweai.ca**
+- App (billing/login): **https://ai-platform-frontend-uaaa.onrender.com**
 
-DNS can take 15–60 minutes. Then:
-
-- https://roweai.ca — full marketing homepage
-- https://roweai.ca/instant-demo/ — demo page
-- Hard refresh: **Ctrl+Shift+R**
-
-## Do NOT point roweai.ca at Render
-
-roweai.ca must use **GitHub Pages** only. The app platform is a separate URL on Render.
+Pushes to `main` auto-deploy via GitHub Actions.
