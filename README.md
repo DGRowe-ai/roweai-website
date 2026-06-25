@@ -1,30 +1,64 @@
-# Rowe AI Marketing Site (roweai.ca)
+# roweai.ca — GitHub Pages
 
-This repo is the **public marketing website** for roweai.ca — not the app platform.
+Marketing site for **https://roweai.ca**
 
-## Important: hosting
+## Host on GitHub Pages (correct setup)
 
-**roweai.ca must be deployed from this repo**, not from `ai-platform-frontend`.
+### 1. Repo visibility (required)
 
-If roweai.ca points to `ai-platform-frontend-uaaa.onrender.com`, visitors will only see the chat widget page instead of the full marketing site.
+GitHub Pages on a **private** repo needs **GitHub Pro** ($4/mo).
 
-### Deploy on Render (recommended for private GitHub repo)
+On the **free** plan, make this repo **Public**:
 
-1. [Render Dashboard](https://dashboard.render.com) → **New** → **Static Site**
-2. Connect this `roweai-website` repository
-3. Settings:
-   - **Build command:** `echo "static site"`
-   - **Publish directory:** `.` (root)
-4. **Custom Domains:** add `roweai.ca` and `www.roweai.ca`
-5. **Remove** `roweai.ca` from the `ai-platform-frontend` service custom domains (if attached there)
+`Settings → General → Danger Zone → Change repository visibility → Public`
 
-### DNS (GoDaddy)
+### 2. Turn on Pages
 
-Point roweai.ca to your **Render Static Site** URL (Render provides DNS instructions when you add the custom domain).
+`Settings → Pages`
 
-Do **not** point roweai.ca CNAME to `ai-platform-frontend-uaaa.onrender.com`.
+| Setting | Value |
+|---------|--------|
+| Source | Deploy from a branch |
+| Branch | `main` |
+| Folder | `/ (root)` |
+| Custom domain | `roweai.ca` |
 
-### App platform (separate)
+Wait for the green DNS check, then enable **Enforce HTTPS**.
 
-- Billing / login / dashboard: `https://ai-platform-frontend-uaaa.onrender.com`
-- API: `https://ai-platform-backend-ulqs.onrender.com`
+The `CNAME` file in this repo already contains `roweai.ca`.
+
+### 3. GoDaddy DNS (replace Render records)
+
+**Delete** any A records pointing to `216.24.57.x` (Render).
+
+**Delete** the CNAME for `www` → `ai-platform-frontend-uaaa.onrender.com`.
+
+**Add** these records:
+
+| Type | Name | Value | TTL |
+|------|------|--------|-----|
+| A | `@` | `185.199.108.153` | 1 Hour |
+| A | `@` | `185.199.109.153` | 1 Hour |
+| A | `@` | `185.199.110.153` | 1 Hour |
+| A | `@` | `185.199.111.153` | 1 Hour |
+| CNAME | `www` | `dgrowe-ai.github.io` | 1 Hour |
+
+### 4. Remove roweai.ca from Render
+
+In Render → **ai-platform-frontend-uaaa** → Settings → Custom Domains:
+
+**Remove** `roweai.ca` and `www.roweai.ca`.
+
+The app stays at: `https://ai-platform-frontend-uaaa.onrender.com`
+
+### 5. Wait and test
+
+DNS can take 15–60 minutes. Then:
+
+- https://roweai.ca — full marketing homepage
+- https://roweai.ca/instant-demo/ — demo page
+- Hard refresh: **Ctrl+Shift+R**
+
+## Do NOT point roweai.ca at Render
+
+roweai.ca must use **GitHub Pages** only. The app platform is a separate URL on Render.
