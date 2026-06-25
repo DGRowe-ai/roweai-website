@@ -148,6 +148,31 @@ img {
   color: var(--teal-dark);
 }
 
+.demo-review {
+  border-top: 1px solid #cfe9e4;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.demo-review-text {
+  color: var(--muted);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 auto 1rem;
+  max-width: 420px;
+}
+
+.demo-review-qr {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .hidden {
   display: none !important;
 }
