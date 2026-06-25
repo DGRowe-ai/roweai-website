@@ -1,0 +1,14 @@
+# Deploy roweai.ca marketing site as a Render Static Site.
+# In Render Dashboard: New → Static Site → connect this repo → use this blueprint.
+# Add custom domain roweai.ca here (NOT on ai-platform-frontend).
+
+services:
+  - type: web
+    name: roweai-marketing
+    runtime: static
+    staticPublishPath: .
+    buildCommand: echo "Static marketing site — no build step"
+    routes:
+      - type: rewrite
+        source: /register
+        destination: /register/index.html
