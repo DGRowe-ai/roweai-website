@@ -46,16 +46,11 @@
       background: #008080;
       padding: 2.5rem 1.5rem 3rem;
       text-align: center;
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
+      width: 100%;
     }
 
     .site-header img {
-      max-width: min(520px, 90vw);
+      max-width: min(420px, 85vw);
       margin: 0 auto;
     }
 
@@ -77,7 +72,7 @@
 
     .hero-slogan {
       width: 100%;
-      max-width: 720px;
+      max-width: 520px;
       margin: 0 auto;
       border-radius: 8px;
     }
@@ -107,7 +102,7 @@
 
     .section-image {
       width: 100%;
-      max-width: 760px;
+      max-width: 480px;
       margin: 2.5rem auto;
       border-radius: 8px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -269,6 +264,17 @@
       z-index: 999999 !important;
     }
 
+    /* Desktop / laptop: keep images comfortably sized */
+    @media (min-width: 601px) {
+      .hero-slogan {
+        max-width: 480px;
+      }
+
+      .section-image {
+        max-width: 440px;
+      }
+    }
+
     /* Mobile adjustments */
     @media (max-width: 600px) {
       .container {
@@ -285,11 +291,27 @@
 
       .site-header {
         padding: 2rem 1rem 2.5rem;
+      }
+
+      .hero-slogan {
+        max-width: 92vw;
+      }
+
+      .section-image {
+        max-width: 100%;
+        margin: 1.75rem auto;
+      }
+
+      .register-btn,
+      .demo-btn {
+        font-size: 1.1rem;
+        padding: 0.9rem 2rem;
         width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        left: auto;
-        right: auto;
+        max-width: 320px;
+      }
+
+      .contact h2 {
+        font-size: 1.5rem;
       }
 
       #rowe-ai-chat-widget,
@@ -310,31 +332,15 @@
       .hero {
         margin-bottom: 2rem;
       }
-
-      .section-image {
-        margin: 1.75rem auto;
-      }
-
-      .register-btn,
-      .demo-btn {
-        font-size: 1.1rem;
-        padding: 0.9rem 2rem;
-        width: 100%;
-        max-width: 320px;
-      }
-
-      .contact h2 {
-        font-size: 1.5rem;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="site-header">
-      <img src="photos for website/rowe-ai-logo.png" alt="Rowe AI logo" />
-    </header>
+  <header class="site-header">
+    <img src="photos for website/rowe-ai-logo.png" alt="Rowe AI logo" />
+  </header>
 
+  <div class="container">
     <main>
       <section class="hero">
         <h1>Welcome to Rowe AI</h1>
