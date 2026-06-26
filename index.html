@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Rowe AI – Smart Chatbots for Small Business</title>
   <meta name="description" content="Rowe AI chatbots answer your customers' questions 24/7 so you can focus on your business. Start your free 30-day trial today." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,6 +25,7 @@
       font-family: "Playfair Display", "Roboto", Georgia, serif;
       line-height: 1.7;
       text-align: center;
+      overflow-x: hidden;
     }
 
     /* Center and constrain content */
@@ -244,6 +248,27 @@
       text-decoration: underline;
     }
 
+    /* Chat widget: small bubble, panel must not cover whole screen on mobile */
+    #chat-bubble {
+      position: fixed !important;
+      bottom: 16px !important;
+      right: 16px !important;
+      z-index: 999998 !important;
+    }
+
+    #rowe-ai-chat-widget,
+    #loki-widget {
+      position: fixed !important;
+      bottom: 84px !important;
+      right: 16px !important;
+      left: auto !important;
+      top: auto !important;
+      width: min(340px, calc(100vw - 32px)) !important;
+      height: min(460px, calc(100vh - 120px)) !important;
+      max-height: 70vh !important;
+      z-index: 999999 !important;
+    }
+
     /* Mobile adjustments */
     @media (max-width: 600px) {
       .container {
@@ -260,6 +285,20 @@
 
       .site-header {
         padding: 2rem 1rem 2.5rem;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        left: auto;
+        right: auto;
+      }
+
+      #rowe-ai-chat-widget,
+      #loki-widget {
+        width: calc(100vw - 32px) !important;
+        height: min(400px, 58vh) !important;
+        max-height: 58vh !important;
+        right: 16px !important;
+        left: 16px !important;
       }
 
       .text-box {
@@ -381,9 +420,29 @@
     </p>
     <p>&copy;2026 Rowe AI - All Rights Reserved.</p>
   </footer>
-<script
-  src="https://ai-platform-frontend-uaaa.onrender.com/widget.js"
-  data-business="rowe_ai_website"
-></script>
+<script>
+  window.addEventListener("load", function () {
+    var script = document.createElement("script");
+    script.src = "https://ai-platform-frontend-uaaa.onrender.com/widget.js?v=20260625";
+    script.setAttribute("data-business", "rowe_ai_website");
+    document.body.appendChild(script);
+
+    var checks = 0;
+    var timer = setInterval(function () {
+      checks += 1;
+      var iframe = document.getElementById("rowe-ai-chat-widget");
+      if (iframe) {
+        if (!iframe.dataset.roweReady) {
+          iframe.dataset.roweReady = "1";
+          iframe.style.display = "none";
+        }
+        clearInterval(timer);
+      }
+      if (checks > 40) {
+        clearInterval(timer);
+      }
+    }, 100);
+  });
+</script>
 </body>
 </html>

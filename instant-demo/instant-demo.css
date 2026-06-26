@@ -21,6 +21,7 @@ body {
   font-family: "Playfair Display", "Roboto", Georgia, serif;
   line-height: 1.7;
   text-align: center;
+  overflow-x: hidden;
 }
 
 img {
