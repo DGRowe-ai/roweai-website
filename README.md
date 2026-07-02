@@ -5,10 +5,10 @@
 ### Step A — Enable Pages (2 clicks)
 
 1. Open: **https://github.com/DGRowe-ai/roweai-website/settings/pages**
-2. Under **Build and deployment** → **Source**, choose **GitHub Actions** (not "Deploy from branch")
-3. Save
+2. Under **Build and deployment** → **Source**, choose **Deploy from a branch**
+3. **Branch:** `main` → folder **`/ (root)`** → Save
 
-The workflow `.github/workflows/pages.yml` deploys automatically on every push to `main`.
+Every push to `main` rebuilds the site automatically (usually within 1–2 minutes).
 
 ### Step B — Repo must be Public (free plan)
 
@@ -52,4 +52,4 @@ Render → **ai-platform-frontend-uaaa** → Custom Domains → **remove** rowea
 - Site: **https://roweai.ca**
 - App (billing/login): **https://ai-platform-frontend-uaaa.onrender.com**
 
-Pushes to `main` auto-deploy via GitHub Actions.
+Pushes to `main` auto-deploy from the `main` branch (root folder).
