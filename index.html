@@ -226,6 +226,16 @@
       text-decoration: underline;
     }
 
+    .legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1rem;
+      justify-content: center;
+      line-height: 1.6;
+      margin: 0.75rem auto;
+      max-width: 820px;
+    }
+
     .login-note {
       font-family: "Roboto", sans-serif;
       font-size: 0.95rem;
@@ -416,11 +426,16 @@
       &nbsp;|&nbsp;
       <a href="https://ai-platform-frontend-uaaa.onrender.com/client-dashboard.html">Client Dashboard</a>
     </p>
-    <p>
-      <a href="/terms-of-service.html">Terms of Service</a>
-      &nbsp;|&nbsp;
-      <a href="/privacy-policy.html">Privacy Policy</a>
-    </p>
+    <nav class="legal-links" aria-label="Legal policies">
+      <a href="terms%20and%20policies/Rowe%20AI%20%E2%80%94%20Terms%20of%20Service.pdf" target="_blank" rel="noopener">Terms of Service</a>
+      <a href="terms%20and%20policies/Rowe%20AI%20%E2%80%94%20Privacy%20Policy.pdf" target="_blank" rel="noopener">Privacy Policy</a>
+      <a href="terms%20and%20policies/Rowe%20AI%20%E2%80%94%20Acceptable%20Use%20Policy%20(AUP).pdf" target="_blank" rel="noopener">Acceptable Use Policy</a>
+      <a href="terms%20and%20policies/Rowe%20AI%20%E2%80%94%20Refund%20%26%20Cancellation%20Policy.pdf" target="_blank" rel="noopener">Refund &amp; Cancellation Policy</a>
+      <a href="terms%20and%20policies/Rowe%20AI%20%E2%80%94%20Data%20Handling%20%26%20Security%20Policy.pdf" target="_blank" rel="noopener">Data Handling &amp; Security Policy</a>
+      <a href="terms%20and%20policies/Rowe%20AI%20%E2%80%94%20Onboarding%20Disclosure.pdf" target="_blank" rel="noopener">Onboarding Disclosure</a>
+      <a href="terms%20and%20policies/Rowe%20AI%20%E2%80%94%20Sanctions%20Compliance%20Statement.pdf" target="_blank" rel="noopener">Sanctions Compliance Statement</a>
+      <a href="terms%20and%20policies/Rowe%20AI%20%E2%80%94%20Liability%20Waiver%20%26%20Limitation%20of%20Liability%20Notice.pdf" target="_blank" rel="noopener">Liability Waiver</a>
+    </nav>
     <p>
       Support: <a href="mailto:support@roweai.ca">support@roweai.ca</a>
     </p>
