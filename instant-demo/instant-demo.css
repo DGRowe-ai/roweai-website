@@ -67,6 +67,84 @@ img {
   max-width: 620px;
 }
 
+.demo-tagline {
+  color: var(--text);
+  font-family: "Roboto", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.7;
+  margin: 1.25rem auto 0;
+  max-width: 620px;
+}
+
+.demo-header--secondary h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.voicebot-demo-card h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.voicebot-demo-desc {
+  color: var(--muted);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+  text-align: center;
+}
+
+.demo-audio-wrap {
+  background: #ffffff;
+  border: 1px solid #cfe9e4;
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.demo-audio-player {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: min(100%, 480px);
+}
+
+.demo-audio-note {
+  color: var(--muted);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  margin: 0.875rem 0 0;
+}
+
+.demo-divider {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  margin: 2.5rem 0 2rem;
+  text-align: center;
+}
+
+.demo-divider::before,
+.demo-divider::after {
+  background: #cfe9e4;
+  content: "";
+  flex: 1;
+  height: 1px;
+}
+
+.demo-divider span {
+  color: var(--teal);
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 .demo-card {
   background: #fafafa;
   border: 2px solid var(--border);
