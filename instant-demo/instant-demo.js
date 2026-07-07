@@ -1,6 +1,17 @@
 const API_URL = "https://ai-platform-backend-ulqs.onrender.com";
 const REGISTER_URL = "https://ai-platform-frontend-uaaa.onrender.com/billing.html";
 
+function buildBillingUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get("ref") || sessionStorage.getItem("rowe_referral_code");
+  if (ref) {
+    const trimmed = ref.trim();
+    sessionStorage.setItem("rowe_referral_code", trimmed);
+    return `${REGISTER_URL}?ref=${encodeURIComponent(trimmed)}`;
+  }
+  return REGISTER_URL;
+}
+
 const state = {
   instanceId: null,
   businessData: null,
@@ -22,7 +33,7 @@ const els = {
   registerLink: document.getElementById("register-link"),
 };
 
-els.registerLink.href = REGISTER_URL;
+els.registerLink.href = buildBillingUrl();
 
 function setStatus(message, type = "") {
   els.status.textContent = message || "";
