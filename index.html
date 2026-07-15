@@ -148,7 +148,7 @@
 
     .plan-section {
       margin: 2.5rem auto 1rem;
-      max-width: 960px;
+      max-width: 1100px;
       width: 100%;
     }
 
@@ -221,15 +221,21 @@
       min-height: 2.75rem;
     }
 
-    .plan-card button {
+    .plan-card .plan-buttons {
       margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .plan-card button {
       width: 100%;
       border: none;
       border-radius: 999px;
       background: #008080;
       color: #ffffff;
       font-family: "Roboto", sans-serif;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 500;
       padding: 0.85rem 1rem;
       cursor: pointer;
@@ -391,6 +397,14 @@
       text-decoration: underline;
     }
 
+    .login-note-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
     /* Chat widget: small bubble, panel must not cover whole screen on mobile */
     #chat-bubble {
       position: fixed !important;
@@ -522,7 +536,7 @@
       <div class="text-box">
         <h2>Chatbot &mdash; Your 24/7 Website Assistant</h2>
         <p>Our chatbot sits right on your website and answers customer questions instantly. It never sleeps, never takes breaks, and never calls in sick. It&rsquo;s like having a personal secretary who works around the clock.</p>
-        <p>Start your free 30-day trial &mdash; after that, it&rsquo;s just $25/month.<br />
+        <p>Start your free 30-day trial &mdash; after that, it&rsquo;s just $40/month.<br />
         For the cost of a takeout dinner, you get your time back.</p>
       </div>
 
@@ -559,7 +573,7 @@
         <p>No more interruptions.<br />
         No more missed calls.<br />
         No more repeating the same information all day.</p>
-        <p>Start your free 30-day trial &mdash; after that, it&rsquo;s $50/month.</p>
+        <p>Start your free 30-day trial &mdash; after that, plans start at $100/month.</p>
         <p>Perfect for:</p>
         <ul>
           <li>Barbershops</li>
@@ -574,7 +588,7 @@
 
       <div class="text-box">
         <h2>Duo Bundle &mdash; Chatbot + Voicebot</h2>
-        <p>Get both the website chatbot and the AI phone receptionist together for $65/month.<br />
+        <p>Get both the website chatbot and the AI phone receptionist together starting at $130/month.<br />
         One dashboard.<br />
         One brand.<br />
         One seamless customer experience.</p>
@@ -597,33 +611,42 @@
         <div class="plan-grid">
           <article class="plan-card">
             <h3>Chatbot</h3>
-            <p class="plan-price">$25/mo</p>
             <p class="plan-trial">30-day trial</p>
             <p class="plan-tagline">Add to website</p>
-            <button type="button" data-plan="chatbot">Start Chatbot</button>
+            <div class="plan-buttons">
+              <button type="button" data-plan="chatbot">Chatbot — $40/month</button>
+            </div>
           </article>
           <article class="plan-card">
             <h3>Voicebot</h3>
-            <p class="plan-price">$50/mo</p>
             <p class="plan-trial">30-day trial</p>
             <p class="plan-tagline">AI phone receptionist</p>
-            <button type="button" data-plan="voicebot">Start Voicebot</button>
+            <div class="plan-buttons">
+              <button type="button" data-plan="voicebot_starter">Voicebot Starter — $100/month</button>
+              <button type="button" data-plan="voicebot_pro">Voicebot Pro — $150/month</button>
+              <button type="button" data-plan="voicebot_premium">Voicebot Premium — $200/month</button>
+            </div>
           </article>
           <article class="plan-card plan-card--featured">
             <h3>Duo</h3>
-            <p class="plan-price">$65/mo</p>
             <p class="plan-trial">30-day trial</p>
             <p class="plan-tagline">Chatbot + Voicebot</p>
-            <button type="button" data-plan="duo">Start Duo</button>
+            <div class="plan-buttons">
+              <button type="button" data-plan="duo_starter">Duo Starter — $130/month</button>
+              <button type="button" data-plan="duo_pro">Duo Pro — $170/month</button>
+              <button type="button" data-plan="duo_premium">Duo Premium — $220/month</button>
+            </div>
           </article>
         </div>
         <p class="plan-checkout-status" id="plan-checkout-status" role="status" aria-live="polite"></p>
       </section>
       <p class="login-note">
         Already have an account?
-        <a href="https://ai-platform-frontend-uaaa.onrender.com/login.html">Log in</a>
-        or visit your
-        <a href="https://ai-platform-frontend-uaaa.onrender.com/client-dashboard.html">client dashboard</a>.
+        <span class="login-note-links">
+          <a href="https://ai-platform-frontend-uaaa.onrender.com/login-chatbot.html">Chatbot Login</a>
+          <a href="https://ai-platform-frontend-uaaa.onrender.com/login-voicebot.html">Voicebot Login</a>
+          <a href="https://ai-platform-frontend-uaaa.onrender.com/login-duo.html">Duo Login</a>
+        </span>
       </p>
       <p class="cta-note">
         Secure checkout powered by Stripe. Card details are never stored by Rowe AI.
@@ -640,9 +663,11 @@
 
   <footer class="site-footer">
     <p>
-      <a href="https://ai-platform-frontend-uaaa.onrender.com/login.html">Client Login</a>
+      <a href="https://ai-platform-frontend-uaaa.onrender.com/login-chatbot.html">Chatbot Login</a>
       &nbsp;|&nbsp;
-      <a href="https://ai-platform-frontend-uaaa.onrender.com/client-dashboard.html">Client Dashboard</a>
+      <a href="https://ai-platform-frontend-uaaa.onrender.com/login-voicebot.html">Voicebot Login</a>
+      &nbsp;|&nbsp;
+      <a href="https://ai-platform-frontend-uaaa.onrender.com/login-duo.html">Duo Login</a>
     </p>
     <nav class="legal-links" aria-label="Legal policies">
       <a href="/legal/terms-of-service.pdf" target="_blank" rel="noopener">Terms of Service</a>
