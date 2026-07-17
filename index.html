@@ -168,11 +168,44 @@
       max-width: 520px;
     }
 
+    .plan-group {
+      margin: 0 0 2.5rem;
+    }
+
+    .plan-group:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .plan-group-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.25rem, 3vw, 1.6rem);
+      font-weight: 600;
+      color: #006666;
+      margin: 0 0 0.4rem;
+      text-align: center;
+    }
+
+    .plan-group-intro {
+      font-family: "Roboto", sans-serif;
+      font-size: 0.95rem;
+      color: #555555;
+      margin: 0 auto 1.25rem;
+      max-width: 640px;
+      text-align: center;
+      line-height: 1.55;
+    }
+
     .plan-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
       text-align: left;
+    }
+
+    .plan-grid--single {
+      grid-template-columns: 1fr;
+      max-width: 520px;
+      margin: 0 auto;
     }
 
     .plan-card {
@@ -190,13 +223,18 @@
       box-shadow: 0 6px 24px rgba(0, 128, 128, 0.12);
     }
 
-    .plan-card h3 {
+    .plan-card h3,
+    .plan-card h4 {
       font-family: "Playfair Display", serif;
       font-size: 1.5rem;
       font-weight: 600;
       margin: 0 0 0.35rem;
       text-align: center;
       color: #000000;
+    }
+
+    .plan-card h4 {
+      font-size: 1.35rem;
     }
 
     .plan-price {
@@ -210,16 +248,47 @@
     .plan-trial {
       font-size: 0.9rem;
       color: #555555;
-      margin: 0 0 1rem;
+      margin: 0 0 0.75rem;
       text-align: center;
     }
 
     .plan-tagline {
       font-size: 0.95rem;
       color: #333333;
-      margin: 0 0 1.25rem;
+      margin: 0 0 1rem;
       text-align: center;
-      min-height: 2.75rem;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .plan-features {
+      margin: 0 0 1rem;
+      padding-left: 1.15rem;
+      color: #333333;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .plan-features li {
+      margin-bottom: 0.4rem;
+    }
+
+    .plan-features li:last-child {
+      margin-bottom: 0;
+    }
+
+    .plan-best-for {
+      font-size: 0.88rem;
+      color: #555555;
+      line-height: 1.5;
+      margin: 0 0 1.25rem;
+      text-align: left;
+    }
+
+    .plan-best-for strong {
+      color: #006666;
+      font-weight: 500;
     }
 
     .plan-card .plan-buttons {
@@ -516,8 +585,12 @@
 
       .plan-grid {
         grid-template-columns: 1fr;
-        max-width: 360px;
+        max-width: 420px;
         margin: 0 auto;
+      }
+
+      .plan-grid--single {
+        max-width: 420px;
       }
 
       .plan-card button {
@@ -577,7 +650,8 @@
 
       <div class="text-box">
         <h2>Chatbot &mdash; Your 24/7 Website Assistant</h2>
-        <p>Our chatbot sits right on your website and answers customer questions instantly. It never sleeps, never takes breaks, and never calls in sick. It&rsquo;s like having a personal secretary who works around the clock.</p>
+        <p>Our chatbot lives on your website and talks with visitors the moment they have a question. It never sleeps, never takes breaks, and never calls in sick. Think of it as a friendly front-desk assistant that works around the clock&mdash;so your customers get answers while you stay focused on the work in front of you.</p>
+        <p>Unlike our phone plans, the chatbot is not split into Starter, Pro, or Premium. Every Chatbot subscription includes the full experience: natural conversations, lead capture, brand personality, and the tools you need to keep improving how it helps your customers.</p>
         <p>Start your free 30-day trial &mdash; after that, it&rsquo;s just $40/month.<br />
         For the cost of a takeout dinner, you get your time back.</p>
       </div>
@@ -589,15 +663,16 @@
       />
 
       <div class="text-box">
-        <p>Your chatbot includes:</p>
+        <p>What your chatbot does:</p>
         <ul>
-          <li>Chat history</li>
-          <li>Conversation analytics</li>
-          <li>Custom personality settings</li>
-          <li>A full client dashboard</li>
-          <li>A preview window to test responses</li>
-          <li>A PDF installation guide</li>
-          <li>Password management</li>
+          <li>Answers questions using the information you provide about your business</li>
+          <li>Holds natural back-and-forth conversations with website visitors</li>
+          <li>Collects names, contact details, and appointment requests</li>
+          <li>Captures leads so you can follow up with interested customers</li>
+          <li>Matches your brand with custom personality and tone settings</li>
+          <li>Keeps a clear history of every chat so nothing gets lost</li>
+          <li>Shows conversation insights so you can spot common questions and new opportunities</li>
+          <li>Gives you a full dashboard, preview window, and simple install guide</li>
         </ul>
         <p>You might even discover new services customers are asking for &mdash; and add them to grow your business.</p>
       </div>
@@ -611,10 +686,11 @@
       <div class="text-box">
         <h2>Voicebot &mdash; Your AI Phone Receptionist</h2>
         <p>Now available: Rowe AI&rsquo;s Voicebot.</p>
-        <p>Your AI receptionist answers your business phone line automatically. It greets callers, provides store hours, location, pricing, service details, and even takes appointment requests &mdash; all while you stay focused on your work.</p>
+        <p>Your AI receptionist answers your business phone line automatically. It greets callers, shares store hours, location, pricing, and service details, and takes appointment requests &mdash; all while you stay focused on your work.</p>
         <p>No more interruptions.<br />
         No more missed calls.<br />
         No more repeating the same information all day.</p>
+        <p>Choose the Voicebot tier that fits your business: Starter for simple coverage, Pro for richer conversations and lead capture, or Premium for multi-location support and ongoing optimization.</p>
         <p>Start your free 30-day trial &mdash; after that, plans start at $100/month.</p>
         <p>Perfect for:</p>
         <ul>
@@ -630,10 +706,10 @@
 
       <div class="text-box">
         <h2>Duo Bundle &mdash; Chatbot + Voicebot</h2>
-        <p>Get both the website chatbot and the AI phone receptionist together starting at $130/month.<br />
+        <p>Get the full website chatbot plus your chosen Voicebot tier together&mdash;starting at $130/month.<br />
         One dashboard.<br />
         One brand.<br />
-        One seamless customer experience.</p>
+        One seamless customer experience across your website and phone line.</p>
         <p class="text-emphasis">Start your free 30-day trial on any plan.</p>
       </div>
 
@@ -664,35 +740,168 @@
             Invalid codes are ignored and full price is charged.
           </p>
         </div>
-        <div class="plan-grid">
-          <article class="plan-card">
-            <h3>Chatbot</h3>
-            <p class="plan-trial">30-day trial</p>
-            <p class="plan-tagline">Add to website</p>
-            <div class="plan-buttons">
-              <button type="button" data-plan="chatbot">Chatbot — $40/month</button>
-            </div>
-          </article>
-          <article class="plan-card">
-            <h3>Voicebot</h3>
-            <p class="plan-trial">30-day trial</p>
-            <p class="plan-tagline">AI phone receptionist</p>
-            <div class="plan-buttons">
-              <button type="button" data-plan="starter">Voicebot Starter — $100/month</button>
-              <button type="button" data-plan="pro">Voicebot Pro — $150/month</button>
-              <button type="button" data-plan="premium">Voicebot Premium — $200/month</button>
-            </div>
-          </article>
-          <article class="plan-card plan-card--featured">
-            <h3>Duo</h3>
-            <p class="plan-trial">30-day trial</p>
-            <p class="plan-tagline">Chatbot + Voicebot</p>
-            <div class="plan-buttons">
-              <button type="button" data-plan="duo_starter">Duo Starter — $130/month</button>
-              <button type="button" data-plan="duo_pro">Duo Pro — $170/month</button>
-              <button type="button" data-plan="duo_premium">Duo Premium — $220/month</button>
-            </div>
-          </article>
+        <div class="plan-group">
+          <h3 class="plan-group-title">Chatbot</h3>
+          <p class="plan-group-intro">
+            One complete website assistant&mdash;not limited by phone tiers.
+            Every Chatbot plan includes the full conversation experience.
+          </p>
+          <div class="plan-grid plan-grid--single">
+            <article class="plan-card">
+              <h4>Chatbot</h4>
+              <p class="plan-price">$40/month</p>
+              <p class="plan-trial">30-day free trial</p>
+              <p class="plan-tagline">Your website&rsquo;s always-on assistant</p>
+              <ul class="plan-features">
+                <li>Answers visitor questions using your business information</li>
+                <li>Holds natural back-and-forth conversations</li>
+                <li>Collects contact details and appointment requests</li>
+                <li>Captures leads so you can follow up with confidence</li>
+                <li>Custom personality that matches your brand</li>
+                <li>Chat history, insights, and a full client dashboard</li>
+              </ul>
+              <p class="plan-best-for">
+                <strong>Best for:</strong> Any business with a website that wants to help visitors instantly&mdash;without adding staff or answering the same questions all day.
+              </p>
+              <div class="plan-buttons">
+                <button type="button" data-plan="chatbot">Start Chatbot Trial — $40/month</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="plan-group">
+          <h3 class="plan-group-title">Voicebot</h3>
+          <p class="plan-group-intro">
+            Your AI phone receptionist. Choose the tier that matches how you want calls handled.
+          </p>
+          <div class="plan-grid">
+            <article class="plan-card">
+              <h4>Starter</h4>
+              <p class="plan-price">$100/month</p>
+              <p class="plan-trial">30-day free trial</p>
+              <p class="plan-tagline">A simple AI receptionist that handles the basics with care</p>
+              <ul class="plan-features">
+                <li>Answers common questions from your business information</li>
+                <li>Collects basic appointment details from callers</li>
+                <li>Keeps conversations short, clear, and easy to follow</li>
+                <li>Uses a friendly default personality right out of the box</li>
+                <li>Reliable coverage without extra complexity</li>
+              </ul>
+              <p class="plan-best-for">
+                <strong>Best for:</strong> Small businesses that want a straightforward phone assistant to greet callers, answer FAQs, and take simple appointment requests.
+              </p>
+              <div class="plan-buttons">
+                <button type="button" data-plan="starter">Start Starter Trial — $100/month</button>
+              </div>
+            </article>
+            <article class="plan-card">
+              <h4>Pro</h4>
+              <p class="plan-price">$150/month</p>
+              <p class="plan-trial">30-day free trial</p>
+              <p class="plan-tagline">Smarter conversations that capture leads and connect the right calls</p>
+              <ul class="plan-features">
+                <li>Holds natural, back-and-forth conversations</li>
+                <li>Asks follow-up questions to gather what you need</li>
+                <li>Collects detailed appointment information</li>
+                <li>Captures leads so you can follow up with confidence</li>
+                <li>Forwards calls when a live person should take over</li>
+                <li>Supports a custom personality and tailored call scripts</li>
+              </ul>
+              <p class="plan-best-for">
+                <strong>Best for:</strong> Growing businesses that need stronger lead capture, call forwarding, and a voice that sounds like your brand.
+              </p>
+              <div class="plan-buttons">
+                <button type="button" data-plan="pro">Start Pro Trial — $150/month</button>
+              </div>
+            </article>
+            <article class="plan-card plan-card--featured">
+              <h4>Premium</h4>
+              <p class="plan-price">$200/month</p>
+              <p class="plan-trial">30-day free trial</p>
+              <p class="plan-tagline">Advanced AI support for multi-location and high-touch service</p>
+              <ul class="plan-features">
+                <li>Routes calls across multiple locations</li>
+                <li>Supports custom workflows tailored to how you operate</li>
+                <li>Includes monthly optimization to keep performance sharp</li>
+                <li>Dedicated support when you need a helping hand</li>
+                <li>Advanced personality tuning for a polished brand voice</li>
+                <li>Automated booking (coming soon)</li>
+              </ul>
+              <p class="plan-best-for">
+                <strong>Best for:</strong> Established or multi-location businesses that want a more powerful phone experience, ongoing refinement, and priority support.
+              </p>
+              <div class="plan-buttons">
+                <button type="button" data-plan="premium">Start Premium Trial — $200/month</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="plan-group">
+          <h3 class="plan-group-title">Duo Bundle</h3>
+          <p class="plan-group-intro">
+            Full Chatbot plus your chosen Voicebot tier&mdash;website and phone covered together.
+          </p>
+          <div class="plan-grid">
+            <article class="plan-card">
+              <h4>Duo Starter</h4>
+              <p class="plan-price">$130/month</p>
+              <p class="plan-trial">30-day free trial</p>
+              <p class="plan-tagline">Full Chatbot + Voicebot Starter</p>
+              <ul class="plan-features">
+                <li>Complete website chatbot experience</li>
+                <li>Answers common phone questions from your business information</li>
+                <li>Collects basic appointment details from callers</li>
+                <li>Short, clear phone conversations with a friendly default personality</li>
+                <li>One dashboard for website chat and phone coverage</li>
+              </ul>
+              <p class="plan-best-for">
+                <strong>Best for:</strong> Small businesses that want website chat and simple phone coverage without paying for two separate tools.
+              </p>
+              <div class="plan-buttons">
+                <button type="button" data-plan="duo_starter">Start Duo Starter — $130/month</button>
+              </div>
+            </article>
+            <article class="plan-card">
+              <h4>Duo Pro</h4>
+              <p class="plan-price">$170/month</p>
+              <p class="plan-trial">30-day free trial</p>
+              <p class="plan-tagline">Full Chatbot + Voicebot Pro</p>
+              <ul class="plan-features">
+                <li>Complete website chatbot experience</li>
+                <li>Natural phone conversations with follow-up questions</li>
+                <li>Detailed appointment intake and lead capture</li>
+                <li>Call forwarding when someone should speak with you</li>
+                <li>Custom personality and tailored call scripts</li>
+              </ul>
+              <p class="plan-best-for">
+                <strong>Best for:</strong> Growing businesses that want a polished website assistant and a smarter phone experience in one package.
+              </p>
+              <div class="plan-buttons">
+                <button type="button" data-plan="duo_pro">Start Duo Pro — $170/month</button>
+              </div>
+            </article>
+            <article class="plan-card plan-card--featured">
+              <h4>Duo Premium</h4>
+              <p class="plan-price">$220/month</p>
+              <p class="plan-trial">30-day free trial</p>
+              <p class="plan-tagline">Full Chatbot + Voicebot Premium</p>
+              <ul class="plan-features">
+                <li>Complete website chatbot experience</li>
+                <li>Multi-location call routing</li>
+                <li>Custom workflows tailored to your operations</li>
+                <li>Monthly optimization and dedicated support</li>
+                <li>Advanced personality tuning, with automated booking coming soon</li>
+              </ul>
+              <p class="plan-best-for">
+                <strong>Best for:</strong> Multi-location or high-volume businesses that want the strongest combined website and phone experience.
+              </p>
+              <div class="plan-buttons">
+                <button type="button" data-plan="duo_premium">Start Duo Premium — $220/month</button>
+              </div>
+            </article>
+          </div>
         </div>
         <p class="plan-checkout-status" id="plan-checkout-status" role="status" aria-live="polite"></p>
       </section>
