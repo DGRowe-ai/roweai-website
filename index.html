@@ -150,6 +150,7 @@
       margin: 2.5rem auto 1rem;
       max-width: 1100px;
       width: 100%;
+      scroll-margin-top: 1.5rem;
     }
 
     .plan-section h2 {
@@ -265,6 +266,47 @@
 
     .plan-checkout-status.is-error {
       color: #b42318;
+    }
+
+    .plan-coupon-wrap {
+      margin: 0 auto 1.5rem;
+      max-width: 420px;
+      text-align: left;
+    }
+
+    .plan-coupon-wrap label {
+      display: block;
+      font-family: "Roboto", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #333333;
+      margin-bottom: 0.4rem;
+    }
+
+    .plan-coupon-wrap input {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #cccccc;
+      border-radius: 8px;
+      padding: 0.75rem 0.9rem;
+      font-family: "Roboto", sans-serif;
+      font-size: 1rem;
+      color: #111111;
+      background: #ffffff;
+    }
+
+    .plan-coupon-wrap input:focus {
+      outline: 2px solid #008080;
+      outline-offset: 1px;
+      border-color: #008080;
+    }
+
+    .plan-coupon-note {
+      font-family: "Roboto", sans-serif;
+      font-size: 0.85rem;
+      color: #666666;
+      line-height: 1.45;
+      margin: 0.5rem 0 0;
     }
 
     .demo-btn {
@@ -605,9 +647,23 @@
         <a class="demo-btn" href="/instant-demo/">Try Demo</a>
       </div>
 
-      <section class="plan-section" aria-labelledby="plan-heading">
+      <section class="plan-section" id="plans" aria-labelledby="plan-heading">
         <h2 id="plan-heading">Choose Your Plan</h2>
         <p class="plan-intro">Start your free 30-day trial on any plan. Secure checkout takes about a minute.</p>
+        <div class="plan-coupon-wrap">
+          <label for="founders-coupon-code">Founders coupon (optional)</label>
+          <input
+            id="founders-coupon-code"
+            type="text"
+            placeholder="Enter coupon code"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <p class="plan-coupon-note">
+            $10 off permanently on Voicebot and Duo plans. Does not apply to Chatbot.
+            Invalid codes are ignored and full price is charged.
+          </p>
+        </div>
         <div class="plan-grid">
           <article class="plan-card">
             <h3>Chatbot</h3>
@@ -690,12 +746,42 @@
     var API_URL = "https://ai-platform-backend-ulqs.onrender.com";
     var statusEl = document.getElementById("plan-checkout-status");
     var planButtons = document.querySelectorAll(".plan-card button[data-plan]");
+    var couponInput = document.getElementById("founders-coupon-code");
+    var plansSection = document.getElementById("plans") || document.getElementById("plan-heading");
+
+    var COUPON_ELIGIBLE = {
+      starter: true,
+      pro: true,
+      premium: true,
+      duo_starter: true,
+      duo_pro: true,
+      duo_premium: true,
+    };
 
     var urlParams = new URLSearchParams(window.location.search);
     var referralFromUrl = urlParams.get("ref");
     if (referralFromUrl) {
       sessionStorage.setItem("rowe_referral_code", referralFromUrl.trim());
     }
+
+    function scrollToPlans() {
+      if (!plansSection) return;
+      plansSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function shouldScrollToPlans() {
+      if (urlParams.get("checkout") === "cancelled") return true;
+      var hash = (window.location.hash || "").replace(/^#/, "");
+      return hash === "plans" || hash === "plan-heading";
+    }
+
+    if (shouldScrollToPlans()) {
+      window.setTimeout(scrollToPlans, 50);
+    }
+
+    window.addEventListener("hashchange", function () {
+      if (shouldScrollToPlans()) scrollToPlans();
+    });
 
     function setStatus(message, isError) {
       if (!statusEl) return;
@@ -717,14 +803,19 @@
         var referralCode =
           sessionStorage.getItem("rowe_referral_code") || referralFromUrl || null;
         var deviceFingerprint = await RoweDeviceFingerprint.getDeviceFingerprint();
+        var payload = {
+          referral_code: referralCode,
+          device_fingerprint: deviceFingerprint,
+          plan_type: planType,
+        };
+        var couponCode = (couponInput && couponInput.value || "").trim();
+        if (couponCode && COUPON_ELIGIBLE[planType]) {
+          payload.couponCode = couponCode;
+        }
         var response = await fetch(API_URL + "/create-checkout-session", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            referral_code: referralCode,
-            device_fingerprint: deviceFingerprint,
-            plan_type: planType,
-          }),
+          body: JSON.stringify(payload),
         });
         var data = await response.json();
         if (!response.ok) {
